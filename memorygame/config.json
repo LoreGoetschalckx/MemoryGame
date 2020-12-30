@@ -1,0 +1,27 @@
+{
+    "header": {
+        "title": "Memory Game",
+        "requester": "Contact: [email]"
+    },
+    "game_settings": {
+        "fixation": "fixation.png",
+        "sorry":"sorry.jpg",
+        "start": "start_image_0.png",
+        "imageDuration": 600,
+        "fixationDuration":800,
+        "trialFeedback":true,
+        "goTrials": ["target repeat", "vig repeat"],
+        "responseKeyCode": 82,
+        "reward": {
+            "amount": 0.5,
+            "currency": "USD"
+        }
+    },
+    "images":{"baseUrl":"http://localhost:8000/"},
+
+    "serverUrl": "http://127.0.0.1:5000/",
+
+    "debugMode": {
+        "numTrials": 10
+    }
+}

@@ -1,0 +1,50 @@
+{
+   "instructions": {
+        "description": "This 5-minute game is part of a study by cognitive scientists. You will see a series of computer-generated images. They are presented to you one by one. Your task is to memorize the images as well as possible and to respond whenever you see an image that has previously occurred in the series.",
+        "guidelines_simple": "Please read the guidelines below carefully.",
+        "guidelines_steps": [
+            "Press the r-key when you recognize an image that appears for the second time, aka a repeat.",
+            "Avoid pressing the key for images that have not been presented before, aka a non-repeat.",
+            "You have time to respond from the moment the image appears until the next one appears.",
+            "When you press the r-key, the frame around the game will change color briefly. Green means correct and red means you made a mistake."
+        ],
+        "guidelines_final_notes": "Do not let the non-repeats trick you! Some images look rather similar. Only press the r-key when you feel certain you have seen the image before.<br>Aim for fewer than 7 incorrect presses. But do not worry if it is a little more. It is quite challenging.",
+        "prerequisites_simple": "",
+        "prerequisites_steps": [
+            "You are working on a desktop or laptop, not on a phone or a tablet.",
+            "You have normal or corrected-to-normal vision."
+        ],
+        "id_code": "Please enter your unique participation code before clicking Continue.",
+        "oneliner": "Press the r-key when you see an image you have seen before in this series."
+    },
+    "disclaimer": "This HIT is part of a [name uni] scientific research project. Your decision to complete this HIT is voluntary. There is no way for us to identify you. The only information we will have, in addition to your responses, is the time at which you started the HIT. The results of the research may be presented at scientific meetings or published in scientific journals. Accepting this HIT indicates that you are at least 18 years of age and agree to complete this HIT voluntarily. If you have questions about this research, please contact [name researcher] at [email].",
+
+    "endText": {
+        "steps":[
+            "The 'Keep playing' button will take you back to the instruction page, from where you can launch a new series. <br>",
+            "The same reward rate will be applied. We will pay you the rewards for additional series through a bonus. <br>",
+            "To finish the game and collect your rewards, <b> be sure to submit</b>! We can only pay you if we have a submission. In the unlikely event of something preventing you from submitting (e.g., you closed the window by mistake, there is an error, etc.), please contact the requester at [email] and we will see what we can do. A screenshot of the page always helps in those scenarios.",
+            "You can keep going until the 'Keep playing' button becomes disabled. <br>",
+            "If you want to take a break and do more later, it is best to submit. You can then accept another one of our HITs later. <br>",
+            "Remember that in addition to detecting the repeats, it is also important to avoid the non-repeats as much as possible! <br>"
+        ],
+        "maintenanceText": "'Keep playing' unavailable at the moment due to maintenance work, our apologies. Please submit."
+    },
+    "sorry":{
+        "noMoreHits_first": "Thank you for your interest in our study.  You have already completed your maximum number of HITs for this batch.  Unfortunately, you can no longer participate.  Please return the HIT.",
+		"noMoreHits_later": "Thank you for your interest in our study.  You have already completed your maximum number of HITs for this batch.  Unfortunately, you can no longer participate.  Please submit.",
+        "error_first": "ERROR - Oops, it looks like something went wrong.  Please return the HIT.  We apologize for this inconvenience.  If you wish, you can wait a couple of minutes (at least 5) and try another one of our batch.  If the problem persists, please contact the requester.",
+        "error_later":"ERROR - Oops, it looks like something went wrong. Please check your internet connection first.  Then try if you can submit the HIT so we can make sure you get paid. If not, please contact the requester.",
+        "running_first": "ERROR - We think you might already have another one of our memory series running.  You can only play one series at a time.  Please return the HIT.  If this is not the case, we apologize for the inconvenience.  If you would still like to participate, you can wait a couple of minutes (at least 5) and try another HIT of our batch.",
+        "running_later": "ERROR - We think you might already have another one of our memory series running.  You can only play one series at a time.  Please submit.  If this is not the case, we apologize for the inconvenience.",
+		"maintenance_first": "Sorry, the game is currently unavailable because we are doing some maintenance work. Please try again later.",
+		"maintenance_later": "Sorry, the game is currently unavailable because we are doing some maintenance work. If you are connected to the internet, you should still be able to submit. If not, please contact us and we will make it right.",
+		"phone": "ERROR - Sorry, we think you might be on a phone or a tablet. Unfortunately, you can only participate if you are working on a desktop or laptop. Please return the HIT.",
+        "error_finish": "Oops, something went wrong while uploading your responses. Don't worry, the problem is likely to be on our end. If you are connected to the internet, you should still be able to submit. If not, please contact us and we will make it right."
+
+    },
+    "submitEval": {
+        "positive": "Thank you for your participation! The submission was successful! Please close the window.",
+        "negative": "There was an error :( Please contact us so we can make it right."
+    }
+}

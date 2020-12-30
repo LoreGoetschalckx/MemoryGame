@@ -1,0 +1,29 @@
+{
+    "version": "version1",
+    "port": 5000,
+    "maintenance": false,
+
+    "sequenceDir": "../sequences/sequenceFiles",
+    "previewSequenceFile": "../sequences/sequenceFiles/previewSequence.json",
+    "assignedSequencesFile": "../data/assignedSequences.csv",
+    "dataFile": "../data/data.csv",
+    "dataSandboxFile":"../data/data_sandbox.csv",
+    "submitFile": "../data/submittedRuns.csv",
+    "dashboardFile":"../data/dashboard.json",
+
+    "maxNumRuns": 4,
+
+    "whitelistWorkerIds": [],
+    "blockingCriteria": {
+        "vigHrCriterion": 0.60,
+        "farCriterion": 0.40
+    },
+
+    "conditionLabels":
+    {
+        "repeatTrials": ["vig repeat", "target repeat"],
+        "vigRepeatTrials": ["vig repeat"],
+        "noRepeatTrials":["filler", "target", "vig"]
+    }
+
+}

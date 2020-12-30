@@ -1,0 +1,215 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+
+    <title>Memory Game</title>
+
+    <link rel="stylesheet" href="assets/lib/semantic/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/overrides.css">
+    <script src="assets/lib/jquery/jquery-3.1.1.min.js"></script>
+    <script src="assets/lib/semantic/semantic.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</head>
+
+<body>
+<div class="ui container">
+       <h1 id="page-title" class="meta-title ui centered dividing header" style="margin-top: 0px; line-height:0.8">
+        <span id="normal-title" style="color:black"></span>
+        <span id="preview-appendix" style="color:red"></span>
+        <p id="requester-details" style="font-size: x-small"></p>
+    </h1>
+</div>
+<div id="main" class="ui container">
+    <!--Instructions page-->
+    <div id="instructions" class="ui top aligned centered grid">
+        <div class="row">
+            <div class="left aligned fourteen wide column">
+                <p id="description"></p>
+                <h3 style="margin-bottom: 6px">Guidelines:</h3>
+                <p id="guidelines-simple" style="margin-bottom: 6px"></p>
+                <ol id=guidelines-steps>
+                </ol>
+                <p id="guidelines-final-notes" style="font-weight: bold"></p>
+                <h3 style="margin-bottom: 6px"> Prerequisites:</h3>
+                <p id="prerequisites-simple" style="margin-bottom: 6px"></p>
+                <ol id="prerequisites-steps">
+                </ol>
+                <div id="idcode-field" class="field">
+                    <p id="idcode-instructions" style="margin-top: 30px; margin-bottom:0px"></p>
+                    <textarea id="idcode-text" rows="2"></textarea>
+                </div>
+                <div id ="instruction-button" class="ui primary button right floated">Continue</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Sorry page-->
+    <div id="sorry" class="ui top aligned centered relaxed grid" style="display: none">
+        <div class="row">
+            <div id="sorry_text" , class="sixteen wide column">
+            </div>
+        </div>
+        <div class="row">
+            <img id='sorry_image' width="556px" height="356px" style="visibility: visible"/>
+        </div>
+        <div class="row">
+            <div id="rescue-button" class="ui primary right floated button" style="display: none">Go to submit page
+            </div>
+        </div>
+    </div>
+
+    <!--Preloading images page-->
+    <div id="loadingImages" class="ui top aligned centered relaxed grid" style="display: none">
+        <div class="row">
+            <div class="sixteen wide column">
+                Please wait while the images are loading. This might take a few seconds.
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen wide column">
+                <div id="progress" style="width:100%; background-color: grey">
+                    <div id="progress-bar" style="width:0%; height:30px; background-color:green"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="sixteen wide column">
+                <div id="progress_text">
+                </div>
+            </div>
+        </div>
+
+        <div class="top aligned row">
+            <div class="eight wide column"></div>
+            <div class="right aligned eight wide column">
+                <div id="start-button" class="ui primary right floated button">Start</div>
+            </div>
+        </div>
+    </div>
+
+    <!--Main experiment page-->
+    <div id="experiment" class="ui top aligned centered relaxed grid">
+        <div class="row">
+            <div class="sixteen wide column">
+                <div id="instructions-oneliner" style="text-align: center;"></div>
+            </div>
+        </div>
+        <img id='mem_image' width="556px" height="356px"
+             style="cursor: none; visibility: visible; outline-style: solid; outline-width: 1px; outline-color: grey; padding-bottom: 50px; padding-top: 50px; padding-left: 150px; padding-right: 150px"/>
+    </div>
+
+    <!--End of the experiment page-->
+    <div id="endGame" class="ui top aligned centered relaxed grid" style="display:none">
+
+        <div id="final-task-layout" class="row" style="padding-top:0px">
+            <div class="one wide column"></div>
+            <div class="fourteen wide column">
+                <!--<div id="final-task-fields" class="ui form">-->
+                <div id="performance-table">
+                    <h2>Thank you!</h2>
+
+                    <table border-collapse="collapse" width="75%" padding="8px" bgcolor="#ADD8E6" align="center">
+                        <tr>
+                            <td align="left"
+                                style="padding: 15px; padding-top: 5px; padding-bottom: 0px; font-weight: bold">Repeats detected:
+                            </td>
+                            <td id="repeats-detected" align="right"
+                                style="padding: 15px;  padding-top: 5px; padding-bottom: 0px; font-weight: bold">
+                                Calculating...
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="left"
+                                style="padding: 15px;  padding-top: 5px; padding-bottom: 5px;font-weight: bold; padding-top: 5px">
+                                Tricked by non-repeats:
+                            </td>
+                            <td id="wrong-presses" align="right"
+                                style="padding: 15px; padding-top: 5px; padding-bottom: 5px; font-weight: bold; padding-top: 5px">
+                                Calculating...
+                            </td>
+                        </tr>
+                        <tr></tr>
+                        <tr height="50" style="vertical-align:bottom">
+                            <td align="left" style="padding: 15px; border-top: 2px solid #ddd; font-weight: bold">
+                                Earnings so far:
+                            </td>
+                            <td id="earnings" align="right"
+                                style="padding: 15px; border-top: 2px solid #ddd; font-weight: bold">Calculating...
+                            </td>
+
+                        </tr>
+                    </table>
+                    <p width="75%" align="left" style="padding-left:13%">Did you not get a perfect score? Do not worry,
+                        nobody does (really). It is supposed to be challenging!</p>
+
+                </div>
+                <div class="row" style="padding-bottom: 25px"></div>
+                <div id="keep-playing" class="row" style="padding-bottom: 25px">
+                    <h2>Want to keep playing?</h2>
+                    <p> If the "Keep playing" button is enabled, you can! Maybe you can even beat your previous score!
+                        Just a few things to be aware of:</p>
+                    <ol id="end-instructions">
+                    </ol>
+                    <div id="maintenance-message" class="left floated" style="color: red"></div>
+                    <div id="keep-playing-button" class="ui blue right floated button">Keep playing</div>
+
+                </div>
+                <div id="stop-playing" class="row" style="display:None">
+                    <div id="end-text" class="eight wide column">
+                    </div>
+                </div>
+            </div>
+            <div class="one wide column"></div>
+
+        </div>
+        <div class="row" style="padding:0px; margin-top:0px; margin-bottom: 0px">
+            <div class="one wide column"></div>
+            <div class="fourteen wide column">
+                <div class="row">
+                    <div id="stop-playing-button" class="ui blue right floated button">Go to submit page</div>
+                </div>
+            </div>
+            <div class="one wide column"></div>
+
+        </div>
+    </div>
+    <div id="submitPage" class="ui top aligned centered relaxed grid" style="display:none">
+
+        <div class="ui form eight wide column">
+
+            <div class="row" style="padding-bottom: 25px"></div>
+            <div class="row">
+                <div id="feedback-field" class="field">
+                    <label>
+                        Any comments or feedback?
+                    </label>
+                    <textarea id="feedback-input" rows="2"></textarea>
+                </div>
+            </div>
+            <div class=row>
+                <div id="submit-field" class="field">
+                    <div id="submit-button" class="ui green right floated button" style="margin-top: 50px">Submit</div>
+                </div>
+            </div>
+            <div class = row>
+                <div id="submit-eval" style="display:none; margin-top:10px; margin-bottom: 10px"></div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <form id="submit-form" name="submit-form">
+            </form>
+        </div>
+    </div>
+
+</div>
+<div id="disclaimer-box" class="ui container">
+    <div class="ui divider" style="margin-top: 70px; margin-bottom: 0px"></div>
+    <div id="disclaimer" class="left aligned sixteen wide column" style="font-size: 12px; color: slategrey">
+    </div>
+</div>
+</body>
+</html>
