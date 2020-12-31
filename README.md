@@ -12,8 +12,11 @@ Please test it thoroughly before using it for your own memory studies.
 
 
 ## Overview
-- [Requirements and Installation](#requirements-and-installation)
-- [Quick Start](#quick-start)
+- [Testing locally](#testing-locally)
+- [Going online](#going-online)
+- [AMT](#amt)
+- [Customize](#customize)
+- [Acknowledgements](#acknowledgements)
 - [Reference](#reference)
 
 ## Testing locally
