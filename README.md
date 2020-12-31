@@ -155,8 +155,8 @@ so it's possible they have more than one line in this file.
 the vigilance performance criterion. It's only rough because it will likely include your test runs and debug runs too.
 
 ## Going online
-Once you've thoroughly tested the game locally, you can start testing it online. You will need a python server for the backend
-and a webserver for the frontend. If you don't have any, I can recommend [PythonAnywhere](https://eu.pythonanywhere.com/)
+Once you've thoroughly tested the game locally, you can start testing it online. You will need a python server for the back-end
+and a webserver for the front-end. If you don't have any, I can recommend [PythonAnywhere](https://eu.pythonanywhere.com/)
 (there is also an [EU](https://eu.pythonanywhere.com/) version).
 
 Adjust the serverURL and the baseURL settings in [this config.json](memorygame/config.json) and
@@ -165,7 +165,7 @@ Adjust the serverURL and the baseURL settings in [this config.json](memorygame/c
 You will then have an URL for your game that you can share with participants directly or you can embed it in AMT.
 
 One thing you might want to test, is if participants finishing a sequence around the same time won't overwrite each other's
-data. The filelocks in the [server.py](server/server.py) are meant to prevent that, but better to be sure. 
+data. The filelocks in the [server.py](server/server.py) are meant to prevent that, but it's better to be sure. 
 
 ## AMT
 If you'd like to recruit participants through AMT, you will want to embed the game as an iframe inside the AMT page. 
@@ -178,7 +178,7 @@ detect the workerId automatically rather than having them type their participati
 
 Please test it thoroughly in the AMT sandbox first.
 
-*Note* that way it is set up, you will need to set the standard reward for a HIT to the compensation for 1 sequence. If 
+*Note* The way it is set up, you will need to set the standard reward for a HIT to the compensation for 1 sequence. If 
 a worker completes more than one sequence within a single HIT, they can be paid for those additional sequences through a 
 bonus. The game will send information on how much bonus a worker should receive to the AMT server. It's then up to you
 as the requester to extract that information and assign the right bonus. Check the
