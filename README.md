@@ -45,7 +45,7 @@ cd ..
 
 Do your images come in sets of which you want to show no more than one image per participant? For example, in the [GANalyze](http://ganalyze.csail.mit.edu) 
 study, we had multiple modified clone images of the same seed image and wanted to make sure a single participant would never see more than one.
-For this **clustering**, you will have to add one level of nesting in the folder structure. Make sure images belonging to the same set or cluster or placed in the same sub-folder.
+For this **clustering**, you will have to add one level of nesting in the folder structure. Make sure images belonging to the same set or cluster are placed in the same sub-folder.
 ```
 stimuli
 |---your_image_set
@@ -66,7 +66,7 @@ stimuli
 Every participant will be assigned a game "track". A track consists of multiple sequences of images. One sequence is similar to a block
 (or sometimes I call it a "run"). Images are never repeated across sequences. When a participant completes a sequence, they can 
 continue with the next one in their track, or return to the game at a later time. The game remembers which track a participant was assigned
-and where (i.e, which sequence) they left off.
+and where (i.e., which sequence) they left off.
 
 Each game track is fully described and defined by a .json file, called a sequenceFile here. The sequenceFiles, unfortunately,
 are not created on the fly but need to be pregenerated.
@@ -79,13 +79,18 @@ cd sequences
 python initializeWorkerSequences.py --num_workers=10
 ```
 
+If you have **clustering** (see above), do:
+```bash
+cd sequences
+python initializeWorkerSequences.py --num_workers=10 --clustering=True
+```
 
 If you plan on using Amazon Mechanical Turk (AMT), you will need an extra track for the preview. It's a dummy track with images
 you don't use in the real game, so that AMT workers can try the game before accepting the HIT.
 ```bash
 python initializeWorkerSequences.py --target_dir=preview --filler_dir=preview --preview=True
 ```
-You should now see a file named previewSequence.json in [this](/sequences/sequenceFiles) folder.
+You should now see a file named previewSequence.json in [this](sequences/sequenceFiles) folder.
 
 #### Checking
 You can visualize and explore the tracks to see if they match your expectations.
