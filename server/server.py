@@ -251,8 +251,6 @@ class FinalizeRun(Resource):
         no_repeat_indices = [i for i in range(num_trials) if sequence_info["types"][run_index][i] in ["filler",
                                                                                                       "target",
                                                                                                       "vig"]]
-        print(vig_repeat_indices)
-        print(no_repeat_indices)
 
         if len(vig_repeat_indices) > 0:
             vig_hits = set(vig_repeat_indices) & set(data_received["responseIndices"])
