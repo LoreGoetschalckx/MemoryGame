@@ -14,7 +14,13 @@ const colors = {
     "vig": "red",
     "vig repeat": "orange"
 };
-const types = ["target", "target repeat", "filler", "vigilance", "vigilance repeat"];
+const types = {
+    "target": "target",
+    "target repeat": "target repeat",
+    "filler": "filler",
+    "vig": "vigilance",
+    "vig repeat": "vigilance repeat"
+};
 
 //------------------------------------------------------------------------------------------------------------------
 /* HELPER FUNCTIONS */
@@ -139,12 +145,12 @@ function makeShowInfoFunction(trialIndex) {
             images[indices[i]].style.opacity = 0.2;
             console.log("occurence ", i, " ", "trialIndex ", indices[i]);
             console.log("occurence ", i, " ", "file ", blockInfo.sequences[state.blockIndex][indices[i]]);
-            console.log("occurence ", i, " ", "type ", types[blockInfo.types[state.blockIndex][indices[i]]-1]);
+            console.log("occurence ", i, " ", "type ", types[blockInfo.types[state.blockIndex][indices[i]]]);
 
             information.innerHTML = information.innerHTML + "occurrence: "+String(i)+"<br>";
             information.innerHTML = information.innerHTML + "trialIndex: "+String(indices[i])+"<br>";
             information.innerHTML = information.innerHTML + "file: "+blockInfo.sequences[state.blockIndex][indices[i]]+"<br>";
-            information.innerHTML = information.innerHTML + "type: "+types[blockInfo.types[state.blockIndex][indices[i]]-1]+"<br>";
+            information.innerHTML = information.innerHTML + "type: "+types[blockInfo.types[state.blockIndex][indices[i]]]+"<br>";
             information.innerHTML = information.innerHTML + "<br>";
         }
     }
