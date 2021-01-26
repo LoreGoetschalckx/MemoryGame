@@ -211,11 +211,13 @@ Goetschalckx, L., Andonian, A., Oliva, A., & Isola, P. (2019). GANalyze: Toward 
 The following is a BibTeX reference entry:
 
 ```markdown
-@InProceedings{Goetschalckx_2019_ICCV,
-author = {Goetschalckx, Lore and Andonian, Alex and Oliva, Aude and Isola, Phillip},
-title = {GANalyze: Toward Visual Definitions of Cognitive Image Properties},
-booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
-month = {October},
-year = {2019}
-}
+@INPROCEEDINGS{goetschalckx2019ganalyze,
+  author={L. {Goetschalckx} and A. {Andonian} and A. {Oliva} and P. {Isola}},
+  booktitle={2019 IEEE/CVF International Conference on Computer Vision (ICCV)}, 
+  title={GANalyze: Toward Visual Definitions of Cognitive Image Properties}, 
+  year={2019},
+  volume={},
+  number={},
+  pages={5743-5752},
+  doi={10.1109/ICCV.2019.00584}}
 ```
