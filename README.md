@@ -156,7 +156,7 @@ the vigilance performance criterion. It's only rough because it will likely incl
 
 ## Going online
 Once you've thoroughly tested the game locally, you can start testing it online. You will need a python server for the back-end
-and a webserver for the front-end. If you don't have any, I can recommend [PythonAnywhere](https://eu.pythonanywhere.com/)
+and a webserver for the front-end. If you don't have any, I can recommend [PythonAnywhere](https://www.pythonanywhere.com/)
 (there is also an [EU](https://eu.pythonanywhere.com/) version).
 
 Adjust the serverURL and the baseURL settings in [this config.json](memorygame/config.json) and
