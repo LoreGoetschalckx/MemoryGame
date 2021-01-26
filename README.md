@@ -5,7 +5,7 @@
 This is my latest implementation of the memory game used to collect (human) memorability scores for large sets of images,
 as first proposed by Isola et al. (2011) in [this paper](http://web.mit.edu/phillipi/www/publications/WhatMakesAnImageMemorable.pdf).
 
-It's very much based on the code we used for [GANalyze](http://ganalyze.csail.mit.edu) and [MemCat](http://gestaltrevision.be/projects/memcat/). 
+It's very much based on the code we used for [GANalyze](http://ganalyze.csail.mit.edu) and to a lesser extent [MemCat](http://gestaltrevision.be/projects/memcat/). 
 However, I did some considerable improving, cleaning, and reorganizing and can no longer guarantee that it works 100% the same.
 
 Please test it thoroughly before using it for your own memory studies.
