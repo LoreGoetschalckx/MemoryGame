@@ -162,9 +162,9 @@ and a webserver for the front-end. If you don't have any, I can recommend [Pytho
 Adjust the serverURL and the baseURL settings in [this config.json](memorygame/config.json) and
 [this config.json](sequences/exploreSequences/config.json) accordingly.
 
-You will then have an URL for your game that you can share with participants directly or you can embed it in AMT.
+You will then have a URL for your game that you can share with participants directly or you can embed it in AMT.
 
-One thing you might want to test, is if participants finishing a sequence around the same time won't overwrite each other's
+One thing you might want to test is if participants finishing a sequence around the same time won't overwrite each other's
 data. The filelocks in the [server.py](server/server.py) are meant to prevent that, but it's better to be sure. 
 
 ## AMT
