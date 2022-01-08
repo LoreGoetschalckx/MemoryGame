@@ -476,7 +476,7 @@ if __name__ == "__main__":
 
     if target_dir_full == filler_dir_full:
         separate_fillers = False  # we will be sampling the fillers from the same pool of images as the targets
-        max_num_blocks = math.floor(len(targets_all) / (args.num_targets + args.num_fillers + args.num_vigs))
+        max_num_blocks = int(math.floor(len(targets_all) / (args.num_targets + args.num_fillers + args.num_vigs)))
 
     else:
         separate_fillers = True  # we will be sampling the fillers from a different pool of images
