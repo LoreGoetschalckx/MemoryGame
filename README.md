@@ -122,7 +122,7 @@ the maximum number of sequences or failed the vigilance performance criterion, e
 
 Open 3 shells and run:
 ```bash
-cd stinuli/memcat
+cd stimuli/memcat
 python -m http.server 8000
 ```
 
