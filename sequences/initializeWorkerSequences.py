@@ -476,13 +476,13 @@ if __name__ == "__main__":
 
     if target_dir_full == filler_dir_full:
         separate_fillers = False  # we will be sampling the fillers from the same pool of images as the targets
-        max_num_blocks = int(math.floor(len(targets_all) / (args.num_targets + args.num_fillers + args.num_vigs)))
+        max_num_blocks = int(math.floor(len(targets_all) / float(args.num_targets + args.num_fillers + args.num_vigs)))
 
     else:
         separate_fillers = True  # we will be sampling the fillers from a different pool of images
         fillers_all = os.listdir(filler_dir_full)  # list of all (clusters of) fillers
-        max_num_blocks = min(math.floor(len(targets_all) / args.num_targets),
-                             math.floor(len(fillers_all) / (args.num_fillers + args.num_vigs)))
+        max_num_blocks = int(min(math.floor(len(targets_all) / float(args.num_targets)),
+                             math.floor(len(fillers_all) / float((args.num_fillers + args.num_vigs)))))
 
     if args.num_blocks == -1:
         num_blocks = max_num_blocks
