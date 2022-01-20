@@ -26,7 +26,6 @@ smaller sets and we only want to show one image of each set per worker. It is as
 have their own subdirectory in os.path.join(image_root, target_dir) (analogously for fillers). If you don't have
 such clustering, you can set clustering to False.
 
-
 NOTE2: The code was only ever tested with the default settings. It might not yield nice sequences (e.g., in terms of 
 where repeats are likely to occur) with different ones.
  """
@@ -126,13 +125,13 @@ def distribute_vigs(places_available, num, num_places, min_dist, max_dist):
     :return: list of chosen places
     """
     # Sampling weights (higher weights for early places)
-    probs = np.concatenate([np.repeat(3, int(70 /float(215) * num_places)),
-                        np.repeat(1, int(110 /float(215) * num_places)),
-                        np.repeat(0.3, int(35 /float(215) * num_places))])
-    probs = np.float64(probs) / np.sum(probs)
+    p = np.concatenate([np.repeat(3, 70 / 215 * num_places),
+                        np.repeat(1, 110 / 215 * num_places),
+                        np.repeat(0.3, 35 / 215 * num_places)])
+    p = np.float64(p) / np.sum(p)
 
     # Choose places
-    chosen_places = list(np.random.choice(places_available, num, replace=False, p=probs))
+    chosen_places = list(np.random.choice(places_available, num, replace=False, p=p))
     for place in chosen_places:
         places_available.remove(place)
     chosen_places = [[x] for x in chosen_places]
@@ -221,14 +220,14 @@ def distribute_targets(places_available, num, num_places, min_dist, max_dist, st
     :return: list of chosen places
     """
     # Define increment so we can distribute remaining targets roughly evenly
-    increment = int(round(float(num_places - start_phase_length) / num))  # roughly how far apart to position *different* targets
+    increment = float(num_places - start_phase_length) / num  # roughly how far apart to position *different* targets
 
     # Choose places
     # First, pick temporary places (might be unavailable) approximately equally far apart
     # Then, find available places roughly matching those temporary places
-    chosen_places = [random.randint(start_phase_length, start_phase_length + increment)]
+    chosen_places = [random.randint(start_phase_length, start_phase_length + round(increment))]
     for i in range(1, num):
-        chosen_places.append(chosen_places[i - 1] + increment)
+        chosen_places.append(chosen_places[i - 1] + round(increment))
     chosen_places = [[find_free_place(places_available=places_available, desired_place=x)] for x in chosen_places]
 
     # Choose places for repeats
@@ -476,13 +475,13 @@ if __name__ == "__main__":
 
     if target_dir_full == filler_dir_full:
         separate_fillers = False  # we will be sampling the fillers from the same pool of images as the targets
-        max_num_blocks = int(math.floor(len(targets_all) / float(args.num_targets + args.num_fillers + args.num_vigs)))
+        max_num_blocks = math.floor(len(targets_all) / (args.num_targets + args.num_fillers + args.num_vigs))
 
     else:
         separate_fillers = True  # we will be sampling the fillers from a different pool of images
         fillers_all = os.listdir(filler_dir_full)  # list of all (clusters of) fillers
-        max_num_blocks = int(min(math.floor(len(targets_all) / float(args.num_targets)),
-                             math.floor(len(fillers_all) / float((args.num_fillers + args.num_vigs)))))
+        max_num_blocks = min(math.floor(len(targets_all) / args.num_targets),
+                             math.floor(len(fillers_all) / (args.num_fillers + args.num_vigs)))
 
     if args.num_blocks == -1:
         num_blocks = max_num_blocks
