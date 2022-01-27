@@ -72,7 +72,7 @@ Each game track is fully described and defined by a .json file, called a sequenc
 are not created on the fly but need to be pregenerated.
 
 #### Generating
-Run this to pregenerate sequenceFiles. 
+Run this to pregenerate sequenceFiles. Note: this was tested with Python 3.8.5.
 You will want to make sure that you have at least as many as you expect to have participants. Set --num_workers high enough (10 is just an example, too low).
 ```bash
 cd sequences
