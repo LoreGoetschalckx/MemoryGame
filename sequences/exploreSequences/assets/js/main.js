@@ -168,10 +168,9 @@ function decreaseWorkerIndex(){
     if (state.workerIndex == 0){
         $("#PreviousWorker").addClass("disabled");
     }
-    else{
-        console.log("disabling")
-        $("#NextWorker").removeClass("disabled");
-    }
+
+    $("#NextWorker").removeClass("disabled");
+
     getBlockInfo(state.workerIndex);
 }
 
@@ -186,9 +185,9 @@ function increaseWorkerIndex(){
     if (state.workerIndex == config.numWorkers -1){
         $("#NextWorker").addClass("disabled");
     }
-    else{
-        $("#PreviousWorker").removeClass("disabled");
-    }
+
+    $("#PreviousWorker").removeClass("disabled");
+
     getBlockInfo(state.workerIndex);
 }
 
@@ -203,10 +202,8 @@ function increaseBlockIndex(){
     if (state.blockIndex == blockInfo.sequences.length -1){
         $("#NextSequence").addClass("disabled");
     }
-    else{
+    $("#PreviousSequence").removeClass("disabled");
 
-        $("#PreviousSequence").removeClass("disabled");
-    }
     fillImages(state.blockIndex);
 }
 
@@ -221,9 +218,9 @@ function decreaseBlockIndex(){
     if (state.blockIndex == 0){
         $("#PreviousSequence").addClass("disabled");
     }
-    else{
-        $("#NextSequence").removeClass("disabled");
-    }
+
+    $("#NextSequence").removeClass("disabled");
+
     fillImages(state.blockIndex);
 }
 
