@@ -597,8 +597,8 @@ function finishRun() {
         if (!preview){
             $("#keep-playing").css("display","none");
             $("#stop-playing").css("display","flex");
-            $("#error-text").html(instructions.sorry.error_finish);
-            $("#error-text").css("color", "red");
+            $("#end-text").html(instructions.sorry.error_finish);
+            $("#end-text").css("color", "red");
         }
     })
 }
